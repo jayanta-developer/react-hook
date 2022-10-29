@@ -2,6 +2,8 @@ import React from 'react'
 
 //Components
 import Accordion from './Accordion'
+import Count from './Count'
+import Search from './Search'
 
 const items = [
   {
@@ -21,7 +23,11 @@ const items = [
 export default function App() {
   return (
     <div>
-      <Accordion items={items} />
+      {/* <Accordion items={items} /> */}
+      <Search/>
+      <div className="ui box">
+      {/* <Count /> */}
+      </div>
     </div>
   )
 }

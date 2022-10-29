@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 const Accordion = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
-  // const [classActive, setClassActive] = useState("");
+  // const [classActive, setClassActive] = useState("");npms
 let active;
   const dropdownFun = (index) => {
     setActiveIndex(index)     

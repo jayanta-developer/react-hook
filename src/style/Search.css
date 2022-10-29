@@ -1,0 +1,10 @@
+.btn{
+  position: relative;
+  top: 35px;
+  left: 90%;    
+}
+
+.btn a{
+  color: white;
+  text-decoration: none;
+}
