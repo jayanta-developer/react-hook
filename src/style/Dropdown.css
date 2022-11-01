@@ -1,10 +1,10 @@
-.container {
+/* .container {
   width: 100%;
   text-align: center;
 }
-.dropdown {
-  /* padding: 3rem; */
-}
+.dropdown { */
+/* padding: 3rem; */
+/* }
 select {
   width: 500px;
   height: 30px;
@@ -16,4 +16,8 @@ select {
 
 .text {
   margin-top: 20%;
+} */
+
+.color-active {
+  color: green;
 }

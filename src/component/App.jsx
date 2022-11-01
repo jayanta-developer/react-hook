@@ -76,6 +76,10 @@ const options = [
     value: 'Olive'
   },
   {
+    label: "White color",
+    value: 'White'
+  },
+  {
     label: "Teal color",
     value: 'Teal'
   },

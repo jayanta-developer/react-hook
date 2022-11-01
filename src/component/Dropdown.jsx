@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+//Style
+// import dropdownStyle from '../style/Dropdown.css'
 
-
-export default function Dropdown({ options, selectedColor, onSetSelectedColor }) {
+export default function Dropdown({
+  options,
+  selectedColor,
+  onSetSelectedColor,
+}) {
+  const ref = useRef();
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      if (ref.current.contains(e.target)) {
+        console.log("content");
+        return;
+      }
+      setOpen(false);
+    });
+  });
 
-  const renderColor = options.map(option => {
+  const renderColor = options.map((option) => {
     if (option.value === selectedColor.value) {
       return null;
     }
@@ -13,24 +28,35 @@ export default function Dropdown({ options, selectedColor, onSetSelectedColor })
       <div
         key={option.label}
         className="text-center item"
-        onClick={() => onSetSelectedColor(option)}>
+        onClick={() => onSetSelectedColor(option)}
+      >
         {option.label}
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <div className="ui form">
       <div className="field ">
-        <h1 className='label #0d6efd  text-center'>Select a color</h1>
+        <h1
+          style={{ color: `${selectedColor.value}` }}
+          className="label #0d6efd text-center bg-secondary"
+        >
+          Select a color
+        </h1>
         <div
+          ref={ref}
           onClick={() => setOpen(!open)}
-          className={`ui text-center selection dropdown ${open ? 'visible active' : ''}`}>
-          <i className='dropdown icon'></i>
+          className={`ui text-center selection dropdown ${open ? "visible active" : ""
+            }`}
+        >
+          <i className="dropdown icon"></i>
           <div className="text">{selectedColor.label}</div>
-          <div className={`menu ${open ? 'visible transition' : ''}`}>{renderColor}</div>
+          <div className={`menu ${open ? "visible transition" : ""}`}>
+            {renderColor}
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
