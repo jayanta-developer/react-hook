@@ -92,11 +92,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <Dropdown
-        options={options}
-        selectedColor={selectedColor}
-        onSetSelectedColor={setSelectedColor}
-      />
+      {/* <Dropdown options={options} selectedColor={selectedColor} onSetSelectedColor={setSelectedColor}/> */}
 
       {/* <Accordion items={items} /> */}
 
