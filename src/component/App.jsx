@@ -6,6 +6,8 @@ import Accordion from './Accordion'
 import Count from './Count'
 import Search from './Search'
 import Dropdown from './Dropdown'
+import Translate from './Translate'
+import Rapper from './Rapper'
 
 const items = [
   {
@@ -40,8 +42,8 @@ const options = [
     value: 'Black'
   },
   {
-    label: "Pink. color",
-    value: 'Pink.'
+    label: "Pink color",
+    value: 'Pink'
   },
   {
     label: "Orange color",
@@ -86,19 +88,20 @@ const options = [
 ]
 
 export default function App() {
-  const [selectedColor, setSelectedColor] = useState(options[options.length - 1])
-
+  // const [selectedColor, setSelectedColor] = useState(options[options.length - 1])
 
   return (
     <div>
       <Navbar />
-      {/* <Dropdown options={options} selectedColor={selectedColor} onSetSelectedColor={setSelectedColor}/> */}
+      <Rapper components={<Translate />} />
+      {/* <Dropdown options={options} selectedColor={selectedColor} onSetSelectedColor={setSelectedColor} /> */}
 
       {/* <Accordion items={items} /> */}
 
       {/* <Search /> */}
 
       {/* <Count /> */}
+      {/* <Translate /> */}
 
     </div>
   )

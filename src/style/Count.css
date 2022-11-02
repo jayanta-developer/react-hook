@@ -1,9 +1,24 @@
-.count-box{
+.count-box {
   margin: 20px;
   display: flex;
   flex-direction: row;
+  display: flex;
+  justify-content: center;
+  /* border: rgb(24, 90, 214) 1px solid; */
 }
 
-.btn{
+.count_btn {
   margin-right: 20px;
+  border: rgb(248, 248, 248) 1px solid;
+  background: rgb(52, 191, 255);
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(55, 65, 66);
+  font-size: 2rem;
+}
+
+.count_btn:active {
+  border: rgb(24, 247, 161) 4px solid;
 }
