@@ -37,7 +37,7 @@ const translateValue = [
 
 export default function Translate() {
   const [translate, setTranslate] = useState(translateValue[0]);
-  const [detectTranslateKey, setDetectTranslateKey] = useState();
+  const [detectTranslateKey, setDetectTranslateKey] = useState('');
   const [inputText, setInputText] = useState("");
   const [translatedValue, setTranslatedValue] = useState('');
 
