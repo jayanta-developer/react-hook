@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 
+//Router
+// import Route from '../router/Route'
+import { Routes, Route, Link } from "react-router-dom";
+
 //Components
 import Navbar from './Navbar'
 import Accordion from './Accordion'
@@ -88,21 +92,19 @@ const options = [
 ]
 
 export default function App() {
-  // const [selectedColor, setSelectedColor] = useState(options[options.length - 1])
+  const [selectedColor, setSelectedColor] = useState(options[options.length - 1])
+  // const [selectNav, SetSelectNav] = useState("/");
 
   return (
-    <div>
+    <>
       <Navbar />
-      <Rapper components={<Translate />} />
-      {/* <Dropdown options={options} selectedColor={selectedColor} onSetSelectedColor={setSelectedColor} /> */}
-
-      {/* <Accordion items={items} /> */}
-
-      {/* <Search /> */}
-
-      {/* <Count /> */}
-      {/* <Translate /> */}
-
-    </div>
+      <Routes>
+        <Route path='/' element={<Accordion items={items} />} />
+        <Route path='/count' element={<Count />} />
+        <Route path='/translate' element={<Translate />} />
+        <Route path='/list' element={<Search />} />
+        <Route path='/dropdown' element={<Dropdown label="Select color" options={options} selectedValue={selectedColor} onSetSelectedValue={setSelectedColor} />} />
+      </Routes>
+    </>
   )
 }
