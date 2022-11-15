@@ -1,110 +1,127 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 //Router
 // import Route from '../router/Route'
 import { Routes, Route, Link } from "react-router-dom";
 
 //Components
-import Navbar from './Navbar'
-import Accordion from './Accordion'
-import Count from './Count'
-import Search from './Search'
-import Dropdown from './Dropdown'
-import Translate from './Translate'
-import Rapper from './Rapper'
+import Navbar from "./Navbar";
+import Accordion from "./Accordion";
+import Count from "./Count";
+import Search from "./Search";
+import Dropdown from "./Dropdown";
+import Translate from "./Translate";
+import { DemoField } from "./DemoField";
+import Rapper from "./Rapper";
 
 const items = [
   {
     title: "What is JSX?",
-    content: "JSX is a syntax extension of JavaScript. It is used with React to describe what the user interface should look like. By using JSX, we can write HTML structures in the same file that contains JavaScript code."
+    content:
+      "JSX is a syntax extension of JavaScript. It is used with React to describe what the user interface should look like. By using JSX, we can write HTML structures in the same file that contains JavaScript code.",
   },
   {
     title: "Can web browsers read JSX directly?",
-    content: "Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object "
+    content:
+      "Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object ",
   },
   {
     title: "What is the virtual DOM?",
-    content: "DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects."
-  }
-]
+    content:
+      "DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects.",
+  },
+];
 
 const options = [
   {
     label: "Red color",
-    value: 'Red'
+    value: "Red",
   },
   {
     label: "Green color",
-    value: 'Green'
+    value: "Green",
   },
   {
     label: "Blue color",
-    value: 'Blue'
+    value: "Blue",
   },
   {
     label: "Black color",
-    value: 'Black'
+    value: "Black",
   },
   {
     label: "Pink color",
-    value: 'Pink'
+    value: "Pink",
   },
   {
     label: "Orange color",
-    value: 'Orange'
+    value: "Orange",
   },
   {
     label: "Yellow color",
-    value: 'Yellow'
+    value: "Yellow",
   },
   {
     label: "Purple color",
-    value: 'Purple'
+    value: "Purple",
   },
   {
     label: "Brown color",
-    value: 'Brown'
+    value: "Brown",
   },
   {
     label: "Gold color",
-    value: 'Gold'
+    value: "Gold",
   },
   {
     label: "Lavender color",
-    value: 'Lavender'
+    value: "Lavender",
   },
   {
     label: "SteelBlue color",
-    value: 'SteelBlue'
+    value: "SteelBlue",
   },
   {
     label: "Olive color",
-    value: 'Olive'
+    value: "Olive",
   },
   {
     label: "White color",
-    value: 'White'
+    value: "White",
   },
   {
     label: "Teal color",
-    value: 'Teal'
+    value: "Teal",
   },
-]
+];
 
 export default function App() {
-  const [selectedColor, setSelectedColor] = useState(options[options.length - 1])
+  const [selectedColor, setSelectedColor] = useState(
+    options[options.length - 1]
+  );
   // const [selectNav, SetSelectNav] = useState("/");
 
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Accordion items={items} />} />
-        <Route path='/count' element={<Count />} />
-        <Route path='/translate' element={<Translate />} />
-        <Route path='/list' element={<Search />} />
-        <Route path='/dropdown' element={<Dropdown label="Select color" options={options} selectedValue={selectedColor} onSetSelectedValue={setSelectedColor} />} />
+        <Route path="/" element={<Accordion items={items} />} />
+        <Route path="/count" element={<Count />} />
+        <Route path="/translate" element={<Translate />} />
+        <Route path="/list" element={<Search />} />
+        <Route path="/components" element={<DemoField />} />
+        <Route
+          path="/dropdown"
+          element={
+            <Dropdown
+              label="Select color"
+              options={options}
+              selectedValue={selectedColor}
+              onSetSelectedValue={setSelectedColor}
+            />
+          }
+        />
       </Routes>
     </>
-  )
+  );
 }
