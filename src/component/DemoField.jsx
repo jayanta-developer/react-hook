@@ -1,5 +1,23 @@
 import React, { useState } from "react";
-import { InputField, RadioButton, Card } from "./ReUseComponents";
+import {
+  InputField,
+  RadioButton,
+  Card,
+  HrmYellowBtn,
+  HrmBlackBtn,
+  Chips,
+  Dropdown,
+  Input,
+} from "./ReUseComponents";
+import Button from "@mui/material/Button";
+import { Container, Typography } from "@mui/material";
+//icons
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import HomeIcon from '@mui/icons-material/Home';
+// import justifyContent from "@material-ui/system";
 
 export const DemoField = () => {
   const [name, SetName] = useState("");
@@ -18,7 +36,7 @@ export const DemoField = () => {
 
   return (
     <>
-      <h1>Reusable Component</h1>
+      {/* <h1>Reusable Component</h1>
       <div className="container">
         <InputField
           label="Name"
@@ -31,37 +49,9 @@ export const DemoField = () => {
         <div>
           <h6>Name: {name} </h6>
         </div>
-      </div>
+      </div> */}
 
-      <div className="container">
-        <InputField
-          label="Email"
-          placeholder="Enter Email"
-          type="Email"
-          name="email"
-          value={email}
-          handelChange={handelChange}
-        />
-        <div>
-          <h6>Email: {email} </h6>
-        </div>
-      </div>
-
-      <div className="container">
-        <InputField
-          label="Password"
-          placeholder="Enter Password"
-          type="password"
-          name="password"
-          value={password}
-          handelChange={handelChange}
-        />
-        <div>
-          <h6>Password: {password} </h6>
-        </div>
-      </div>
-
-      <div className="container">
+      {/* <div className="container">
         <RadioButton
           label="Radio Button"
           name="agree"
@@ -86,9 +76,9 @@ export const DemoField = () => {
         <div>
           <h6>File path: {file} </h6>
         </div>
-      </div>
+      </div> */}
 
-      <Card
+      {/* <Card
         cardType="jobCard"
         jobId="fsd6f634"
         role="Ui developers"
@@ -103,7 +93,83 @@ export const DemoField = () => {
         joinDate="19/10/2022"
         email="email@gmail.com"
         phone="9956596658"
-      />
+      /> */}
+
+
+      {/* Buttons */}
+      <Container
+        maxWidth="lg"
+        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}
+      >
+        <Typography variant="h6" component="h6">
+          Type of Button:
+        </Typography>
+        <HrmYellowBtn icon={<AddCircleIcon />} label="Add" />
+        <HrmYellowBtn icon={<HomeIcon />} label="Home" />
+        <HrmYellowBtn icon={<PostAddIcon />} label="Create Job Posting" />
+        <HrmBlackBtn icon={<EditIcon />} label="Edit" />
+        <HrmBlackBtn icon={<DeleteIcon />} label="Delete" />
+      </Container>
+
+      {/* Chips */}
+      <Container
+        maxWidth="lg"
+        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}
+      >
+        <Typography variant="h6" component="h6">
+          Chips:
+        </Typography>
+        <Chips label="React" />
+        <Chips label="CSS" />
+        <Chips label="JavaScript" />
+      </Container>
+
+
+      {/* Dropdown */}
+      <Container
+        maxWidth="lg"
+        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
+        <Typography variant="h6">
+          Dropdown:
+        </Typography>
+        <Dropdown />
+      </Container>
+
+      {/* Input */}
+      <Container
+        maxWidth="lg"
+        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
+        <Typography variant="h6">
+          Input Fields:
+        </Typography>
+        <Input label="name" type="text" />
+        <Input label="email@email.com" type="email" />
+        <Input label="password" type="password" />
+      </Container>
+
+      {/* My input */}
+      <Container
+        maxWidth="lg"
+        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
+        <Typography variant="h6">
+          Input My version:
+        </Typography>
+        <InputField
+          label="Name"
+          placeholder="Enter Name"
+          type="text"
+          name="name"
+          value={name}
+          handelChange={handelChange}
+        />
+        <div>
+          <h6>Name: {name} </h6>
+        </div>
+
+      </Container>
+
     </>
   );
+
+
 };

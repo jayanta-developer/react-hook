@@ -2,6 +2,10 @@ import "./style.css";
 import avatarLogo from "../../style/avatar-user-svgrepo-com.svg";
 import emailLogo from "../../style/email-svgrepo-com.svg";
 import callLogo from "../../style/call-svgrepo-com.svg";
+
+// import Button from "@mui/material/Button";
+import { Button, Chip, FormControl, InputLabel, Select, MenuItem, TextField } from "@mui/material";
+import styled from "styled-components";
 //Input field
 export const InputField = ({
   label,
@@ -141,3 +145,115 @@ export const Card = ({
     );
   }
 };
+//Have to export another file
+const style = {
+  YellowBtn: {
+    color: "#000000",
+    backgroundColor: "#F5D268",
+    textTransform: "none",
+    "&:hover": {
+      color: "white",
+      backgroundColor: "#F5D268",
+    },
+  },
+
+  BlackBtn: {
+    color: "#FFFFFF",
+    backgroundColor: "#000000",
+    textTransform: "none",
+    "&:hover": {
+      color: "#F5D268",
+      backgroundColor: "#000000",
+    },
+  },
+  chipStyle: {
+    color: "#000000",
+    backgroundColor: "#F5D268",
+  }
+};
+
+//button
+export const HrmYellowBtn = ({ label, icon }) => {
+  return (
+    <Button
+      startIcon={icon}
+      variant="contained"
+      sx={style.YellowBtn}
+      size="large"
+      href="#contained-buttons"
+    >
+      {label}
+    </Button>
+  );
+};
+export const HrmBlackBtn = ({ label, icon }) => {
+  return (
+    <Button
+      startIcon={icon}
+      variant="contained"
+      sx={style.BlackBtn}
+      size="large"
+      href="#contained-buttons"
+    >
+      {label}
+    </Button>
+  );
+};
+
+//chips
+export const Chips = ({ label }) => {
+  return (
+    <>
+      <Chip sx={style.chipStyle} label={label}></Chip>
+    </>
+  )
+
+}
+
+//Dropdown
+export const Dropdown = () => {
+  return (
+    <>
+      <FormControl sx={{ width: '10%' }} >
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          label="Age"
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+
+
+      <FormControl sx={{ width: '15%' }} >
+        <InputLabel id="demo-simple-select-label">select</InputLabel>
+        <Select
+          defaultValue={30}
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          label="select"
+        >
+          <MenuItem value={1}>select1</MenuItem>
+          <MenuItem value={20}>select2</MenuItem>
+          <MenuItem value={3}>select3</MenuItem>
+          <MenuItem value={30}>select4</MenuItem>
+          <MenuItem value={5}>select5</MenuItem>
+          <MenuItem value={6}>select6</MenuItem>
+
+        </Select>
+      </FormControl>
+    </>
+  )
+}
+
+//Input
+export const Input = ({ label, type }) => {
+  return (
+    <>
+      <TextField id="outlined-basic" label={label} type={type} variant="outlined" />
+    </>
+  )
+}
