@@ -38,6 +38,9 @@ export default function Navbar() {
           <div className="nav_items">
             <Link to="/components">components</Link>
           </div>
+          <div className="nav_items">
+            <Link to="/song">songs list</Link>
+          </div>
         </div>
       </nav>
     </div>
