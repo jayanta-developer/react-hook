@@ -17,7 +17,7 @@ import Search from "./Search";
 import Dropdown from "./Dropdown";
 import Translate from "./Translate";
 import { DemoField } from "./DemoField";
-import Songs from "./songs/";
+import Songs from "./songs/Songs";
 import Rapper from "./Rapper";
 
 

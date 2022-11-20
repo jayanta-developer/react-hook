@@ -1,7 +1,6 @@
 import { combineReducers } from "redux"
 //data
-import { songs } from "../data"
-
+import { songs } from "../data";
 const songsReducer = () => {
   return songs
 }
