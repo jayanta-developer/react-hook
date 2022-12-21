@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import pdfParse from "pdf-parse";
+// import { ResumeParser } from "simple-resume-parser";
 import {
   InputField,
   RadioButton,
@@ -15,8 +17,8 @@ import { Container, Typography } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import PostAddIcon from '@mui/icons-material/PostAdd';
-import HomeIcon from '@mui/icons-material/Home';
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import HomeIcon from "@mui/icons-material/Home";
 // import justifyContent from "@material-ui/system";
 
 export const DemoField = () => {
@@ -34,8 +36,35 @@ export const DemoField = () => {
     if (e.target.name === "file") SetFile(e.target.value);
   };
 
+  const handelUpload = (file) => {
+    console.log(file);
+  };
+
+  const btnClick = () => {
+    let fieldText;
+    return (fieldText = "my text");
+  };
+
   return (
     <>
+      <form action="">
+        <input
+          onInput={(e) => handelUpload(e.target.files[0])}
+          id="pdfFile"
+          type="file"
+        />
+        <Button onClick={btnClick} id="uploadBtn">
+          Upload
+        </Button>
+        <br />
+        <br />
+        <input
+          style={{ width: "400px", height: "200px" }}
+          type="text"
+          id="textField"
+        />
+      </form>
+
       {/* <h1>Reusable Component</h1>
       <div className="container">
         <InputField
@@ -95,11 +124,15 @@ export const DemoField = () => {
         phone="9956596658"
       /> */}
 
-
       {/* Buttons */}
       <Container
         maxWidth="lg"
-        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          justifyContent: "space-evenly",
+          pt: 5,
+        }}
       >
         <Typography variant="h6" component="h6">
           Type of Button:
@@ -114,7 +147,12 @@ export const DemoField = () => {
       {/* Chips */}
       <Container
         maxWidth="lg"
-        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          justifyContent: "space-evenly",
+          pt: 5,
+        }}
       >
         <Typography variant="h6" component="h6">
           Chips:
@@ -124,24 +162,31 @@ export const DemoField = () => {
         <Chips label="JavaScript" />
       </Container>
 
-
       {/* Dropdown */}
       <Container
         maxWidth="lg"
-        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
-        <Typography variant="h6">
-          Dropdown:
-        </Typography>
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          justifyContent: "space-evenly",
+          pt: 5,
+        }}
+      >
+        <Typography variant="h6">Dropdown:</Typography>
         <Dropdown />
       </Container>
 
       {/* Input */}
       <Container
         maxWidth="lg"
-        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
-        <Typography variant="h6">
-          Input Fields:
-        </Typography>
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          justifyContent: "space-evenly",
+          pt: 5,
+        }}
+      >
+        <Typography variant="h6">Input Fields:</Typography>
         <Input label="name" type="text" />
         <Input label="email@email.com" type="email" />
         <Input label="password" type="password" />
@@ -150,10 +195,14 @@ export const DemoField = () => {
       {/* My input */}
       <Container
         maxWidth="lg"
-        sx={{ flexDirection: "row", display: "flex", justifyContent: "space-evenly", pt: 5, }}>
-        <Typography variant="h6">
-          Input My version:
-        </Typography>
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          justifyContent: "space-evenly",
+          pt: 5,
+        }}
+      >
+        <Typography variant="h6">Input My version:</Typography>
         <InputField
           label="Name"
           placeholder="Enter Name"
@@ -165,11 +214,7 @@ export const DemoField = () => {
         <div>
           <h6>Name: {name} </h6>
         </div>
-
       </Container>
-
     </>
   );
-
-
 };

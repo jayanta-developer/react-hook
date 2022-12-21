@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 //Router
-// import Route from '../router/Route'
 import { Routes, Route, Link } from "react-router-dom";
 //data
 import { items, options } from "../data"
@@ -19,13 +18,14 @@ import Translate from "./Translate";
 import { DemoField } from "./DemoField";
 import Songs from "./songs/Songs";
 import Rapper from "./Rapper";
+import Service from "./Service";
 
 
 export default function App() {
   const [selectedColor, setSelectedColor] = useState(
     options[options.length - 1]
   );
-  // const [selectNav, SetSelectNav] = useState("/");
+  const [selectNav, SetSelectNav] = useState("/");
 
   return (
     <>
@@ -37,6 +37,7 @@ export default function App() {
         <Route path="/list" element={<Search />} />
         <Route path="/components" element={<DemoField />} />
         <Route path="/song" element={<Songs />} />
+        <Route path="/service" element={<Service />} />
         <Route
           path="/dropdown"
           element={
